@@ -3,8 +3,7 @@ name: CI/CD Pipeline - Docker + Tests + Notifications
 on:
   push:
     branches: [main]
-  create:
-    tags: ['v*']
+    tags: 'v*'
 
 jobs:
   build-test-deploy:
@@ -13,7 +12,7 @@ jobs:
     steps:
       # 1️⃣ Checkout du dépôt
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       # 2️⃣ Exécution des tests
       - name: Run tests
